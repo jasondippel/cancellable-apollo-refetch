@@ -1,0 +1,30 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "apollo-datasource": "^3.2.0",
+    "apollo-server": "^3.4.0",
+    "faker": "^5.5.3",
+    "graphql": "^16.0.0"
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "2.2.2",
+    "@graphql-codegen/typescript": "2.3.0",
+    "@graphql-codegen/typescript-resolvers": "2.4.0",
+    "@types/faker": "^5.5.9",
+    "@types/graphql": "^14.5.0",
+    "@types/node": "^16.11.6",
+    "nodemon": "^2.0.14",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.4.4"
+  },
+  "scripts": {
+    "start": "node 'dist/index.js'",
+    "build": "tsc -p . && ncp src dist",
+    "generate": "graphql-codegen --config codegen.yml",
+    "start:dev": "npm run build:dev",
+    "build:dev": "nodemon 'src/app.ts' --exec 'ts-node' src/app.ts -e ts,graphql"
+  }
+}

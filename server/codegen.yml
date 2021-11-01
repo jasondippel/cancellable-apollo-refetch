@@ -1,0 +1,12 @@
+overwrite: true
+schema: "./src/schema.ts"
+documents: null
+generates:
+  src/generated/graphql.ts:
+    config:
+      useIndexSignature: true
+      # Relative path starting from the ./generated/graphql.ts file
+      contextType: ../types/index#ApolloContextType
+    plugins:
+      - "typescript"
+      - "typescript-resolvers"
