@@ -1,0 +1,8 @@
+query getPeople($count: Int!, $delay: Int) {
+  people(count: $count, delay: $delay) {
+    id
+    first_name
+    last_name
+    age
+  }
+}
